@@ -20,7 +20,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates curl wget gnupg unzip zip xz-utils bzip2 pwgen git \
       nginx memcached default-mysql-client \
-      mmdb-bin libmaxminddb0 libheif-examples libheif1 libde265-0 libnuma1 vite \
+      mmdb-bin libmaxminddb0 pslib-dev libheif-examples libheif1 libde265-0 libnuma1 vite \
       build-essential python3 python3-pip python3-setuptools \
       fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf fonts-liberation \
  && rm -rf /var/lib/apt/lists/*
