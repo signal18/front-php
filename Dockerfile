@@ -56,8 +56,8 @@ RUN if [ "$CLAMAV" = "1" ]; then \
       && freshclam --foreground --stdout ; \
     fi
 
-# supervisord (same supervisor + supervisor_stdout setup as frontmixrnew)
-RUN pip3 install --no-cache-dir --break-system-packages supervisor supervisor-stdout
+# supervisord; programs log straight to the container stdout/stderr (supervisor-stdout is Python 2 only)
+RUN pip3 install --no-cache-dir --break-system-packages supervisor
 COPY supervisord.conf /etc/supervisord.conf
 COPY supervisor.d/ /etc/supervisor.d/
 RUN if [ "$CLAMAV" != "1" ]; then rm -f /etc/supervisor.d/clamav.conf; fi
