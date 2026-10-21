@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # PHP extensions (same module list as frontmixrnew)
 COPY --from=mlocati/php-extension-installer:2 /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions \
-      apcu bcmath blackfire calendar exif ffi gd gettext igbinary imagick imap intl \
+      apcu bcmath blackfire calendar exif ffi ftp gd gettext igbinary imagick imap intl \
       maxminddb memcache memcached msgpack mysqli opcache pcntl pdo_mysql ps pspell \
       shmop sockets sysvmsg sysvsem sysvshm tidy xmlrpc xsl yaml zip
 
